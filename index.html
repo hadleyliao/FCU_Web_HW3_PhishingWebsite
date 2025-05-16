@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CASIO 登入</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <img src="https://auth.casio-intl.com/casio_contents/static/casio/v2/img/casio.svg" alt="CASIO" class="logo">
+    <h2>登入</h2>
+    <form class="login-form" autocomplete="off">
+        <div class="form-group">
+            <label for="email">電子郵件地址</label>
+            <input type="email" id="email" name="email" placeholder="example@casio.com" required />
+        </div>
+        <div class="form-group password-group">
+            <button type="button" class="toggle-password" tabindex="-1" aria-label="顯示或隱藏密碼">
+                <img src="https://auth.casio-intl.com/casio_contents/static/casio/v2/img/password-show.svg" id="togglePasswordIcon" alt="顯示密碼">
+            </button>
+            <label for="password">密碼</label>
+            <input type="password" id="password" name="password" placeholder="密碼" required />
+        </div>
+        <a href="#" class="forgot">忘記密碼？</a>
+        <button type="submit">登入</button>
+        <a href="#" class="register">在這裡註冊 CASIO ID</a>
+    </form>
+
+    <br><br><hr /><br><br>
+    <div class="social-login">
+        <p class="social-title">使用社群媒體帳戶登入</p>
+        <div class="social-buttons">
+            <button class="social-btn apple">
+                <img src="https://auth.casio-intl.com/casio_contents/static/casio/v2/img/sns_apple.svg">
+                Sign in with Apple
+            </button>
+            <button class="social-btn facebook">
+                <img src="https://auth.casio-intl.com/casio_contents/static/casio/v2/img/sns_facebook.svg">
+                Sign in with Facebook
+            </button>
+            <button class="social-btn google">
+                <img src="https://auth.casio-intl.com/casio_contents/static/casio/v2/img/sns_google.svg">
+                Sign in with Google
+            </button>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="casio-id__footer">
+        <div class="casio-id__footer-links">
+            <div class="casio-id__footer-links--utility">
+                <ul>
+                    <li><a href="#" target="_blank" rel="noopener">隱私權通知</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="ext_link_cookie">Cookie 政策</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="ext_link_about">CASIO ID 是什麼？</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="ext_link_faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="casio-id__footer-copyright">
+            <a href="#" target="_blank" rel="noopener noreferrer">© 2025 CASIO COMPUTER CO., LTD.</a>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
