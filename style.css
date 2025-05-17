@@ -1,256 +1,275 @@
-/* ==== 🧱 全域樣式 ==== */
-html, body {
-    height: 100%;
-    min-height: 100vh;
+/* ==== 全域樣式設定 ==== */
+html, body { /* 設定 html 和 body 的高度為 100%，且最小高度為視窗高度 */
+    height: 100%;           /* 高度 100% */
+    min-height: 100vh;      /* 最小高度為視窗高度 */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #111;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body { /* 設定 body 字型、背景、文字顏色、外距、內距，以及使用 Flex 排版讓內容垂直排列 */
+    font-family: Arial, sans-serif;          /* 使用 Arial 字型 */
+    background: #fff;                        /* 背景色為白色 */
+    color: #111;                             /* 文字顏色為深灰 */
+    margin: 0;                               /* 外距為 0 */
+    padding: 0;                              /* 內距為 0 */
+    display: flex;                           /* 使用 flex 排版 */
+    flex-direction: column;                  /* 垂直排列 */
+    min-height: 100vh;                       /* 最小高度為視窗高度 */
 }
 
+/* 主要容器區塊 */
 .container {
-    max-width: 900px;
-    padding: 40px 20px;
-    padding-left: 60px;
-    margin-left: 0;
-    flex: 1 0 auto;
+    max-width: 900px;                        /* 最大寬度 900px */
+    padding: 40px 20px 0 60px;               /* 內距：上 40 右 20 下 0 左 60 */
+    margin-left: 0;                          /* 左外距為 0 */
+    flex: 1 0 auto;                          /* 彈性成長，佔據主要空間 */
 }
 
+/* Logo 樣式 */
 .logo {
-    height: 18px;
-    line-height: 15px;
-    margin-bottom: 20px;
-    width: 95px;
+    height: 18px;                            /* 高度 18px */
+    margin-bottom: 20px;                     /* 底部外距 20px */
+    width: 95px;                             /* 寬度 95px */
 }
 
+/* 標題樣式 */
 h2 {
-    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif;
-    font-size: 32px;
-    width: 922px;
+    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif; /* 多語字型 */
+    font-size: 32px;                         /* 字體大小 32px */
+    width: 922px;                            /* 寬度 922px */
 }
 
-/* ==== 📝 浮動標籤表單（標籤與眼睛都在框線之上） ==== */
+/* ==== 表單相關樣式 ==== */
 .form-group {
-    position: relative;
-    margin-bottom: 24px;
-    max-width: 580px;
+    position: relative;                      /* 相對定位 */
+    margin-bottom: 24px;                     /* 底部外距 24px */
+    max-width: 580px;                        /* 最大寬度 580px */
 }
 
-/* 標籤永遠浮在上方、背景遮住邊框 */
 .form-group label {
-    position: absolute;
-    left: 12px;
-    top: -3px;
-    color: #111;
-    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    background: #fff;
-    padding: 0 6px;
-    z-index: 2;
-    pointer-events: none;
-    line-height: 1;
+    position: absolute;                      /* 絕對定位 */
+    left: 12px;                              /* 距離左側 12px */
+    top: -3px;                               /* 距離上方 -3px */
+    color: #111;                             /* 文字顏色深灰 */
+    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif; /* 多語字型 */
+    font-size: 12px;                         /* 字體大小 12px */
+    font-weight: bold;                       /* 粗體 */
+    background: #fff;                        /* 背景色白色 */
+    padding: 0 6px;                          /* 左右內距 6px */
+    z-index: 2;                              /* 堆疊順序2 */
+    pointer-events: none;                    /* 不可互動 */
+    line-height: 1;                          /* 行高 1 */
 }
 
+/* 密碼欄位群組 */
 .password-group {
-    position: relative;
-    margin-bottom: 24px;
-    max-width: 580px;
-    padding-top: 38px;
+    position: relative;                      /* 相對定位 */
+    margin-bottom: 24px;                     /* 底部外距 24px */
+    max-width: 580px;                        /* 最大寬度 580px */
+    padding-top: 38px;                       /* 上方內距 38px，避免 label 壓到 input */
 }
+
+/* 顯示/隱藏密碼 👁️ 按鈕 */
 .password-group .toggle-password {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    left: auto;
-    background: #fff;
-    border: none;
-    padding: 0 2px;
-    cursor: pointer;
-    height: 28px;
-    width: 28px;
-    display: flex;
-    align-items: center;
-    z-index: 3;
+    position: absolute;                      /* 絕對定位 */
+    top: 10px;                               /* 距離上方 10px */
+    right: 10px;                             /* 距離右側 10px */
+    background: #fff;                        /* 背景色白色 */
+    border: none;                            /* 無邊框 */
+    padding: 0 2px;                          /* 左右內距 2px */
+    cursor: pointer;                         /* 滑過時游標變成👆🏻 */
+    height: 28px;                            /* 高度 28px */
+    width: 28px;                             /* 寬度 28px */
+    display: flex;                           /* 彈性盒模型 */
+    align-items: center;                     /* 垂直置中 */
+    z-index: 3;                              /* 堆疊順序 3 */
 }
 
+/* 密碼欄位的 label 往下推 */
 .password-group label {
-    top: 28px;  /* 將label往下推 */
+    top: 28px;                               /* 距離上方 28px */
 }
 
-
-/* 眼睛icon尺寸 */
+/* 密碼顯示/隱藏 👁️ icon 尺寸 */
 .password-group .toggle-password img {
-    width: 22px;
-    height: 22px;
-    pointer-events: none;
+    width: 26px;                             /* 寬度 26px */
+    height: 26px;                            /* 高度 26px */
+    pointer-events: none;                    /* 不可互動 */
 }
 
-/* input 上方留空，避免被標籤壓住 */
+/* 表單 input 樣式 */
 .form-group input {
-    width: 100%;
-    padding: 20px 40px 10px 12px; /* 上:20px 右:40px(密碼icon) 下:10px 左:12px */
-    font-size: 16px;
-    border: 1px solid #888;
-    outline: none;
-    background: none;
-    box-sizing: border-box;
-    margin-top: 0;
+    width: 100%;                             /* 寬度 100% */
+    padding: 20px 40px 10px 12px;            /* 上 20 右 40 下 10 左 12 */
+    font-size: 16px;                         /* 字體大小 16px */
+    border: 1px solid #888;                  /* 灰色邊框 */
+    outline: none;                           /* 移除外框 */
+    background: none;                        /* 無背景 */
+    box-sizing: border-box;                  /* 盒模型包含邊框與內距 */
+    margin-top: 0;                           /* 上外距 0 */
 }
 
 /* placeholder 顏色 */
 .form-group input::placeholder {
-    color: #aaa;
-    font-size: 14px;
+    color: #aaa;                             /* 顏色 #aaa */
+    font-size: 14px;                         /* 字體大小 14px */
 }
 
-/* ==== 其他表單、社群登入、Footer 保持原樣 ==== */
+/* 登入表單結構 */
 .login-form {
-    display: flex;
-    flex-direction: column;
-    font-size: 12px;
+    display: flex;                           /* 彈性盒模型 */
+    flex-direction: column;                  /* 垂直排列 */
+    font-size: 12px;                         /* 字體大小 12px */
 }
 
+/* 忘記密碼/註冊連結樣式 */
 .forgot, .register {
-    cursor: pointer;
-    display: inline;
-    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif;
-    font-size: 12px;
-    margin-top: 10px;
-    color: #000;
-    text-decoration: underline;
-    text-decoration-style: solid;
+    cursor: pointer;                         /* 滑過時游標變成👆🏻 */
+    display: inline;                         /* 行內元素 */
+    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif; /* 多語字型 */
+    font-size: 12px;                         /* 字體大小 12px */
+    margin-top: 10px;                        /* 上外距 10px */
+    color: #000;                             /* 文字顏色黑色 */
+    text-decoration: underline;              /* 底線 */
 }
 
+/* 忘記密碼/註冊連結 hover 效果 */
+.forgot:hover, .register:hover {
+    text-decoration: none;                   /* 滑過時取消底線 */
+}
+
+/* 登入按鈕樣式 */
 button[type="submit"] {
-    background: #000;
-    color: white;
-    border: none;
-    padding: 12px;
-    margin-top: 20px;
-    cursor: pointer;
-    width: 290px;
+    background: #000;                        /* 背景黑色 */
+    color: white;                            /* 白色字 */
+    border: none;                            /* 無邊框 */
+    padding: 12px;                           /* 內距 12px */
+    margin-top: 20px;                        /* 上外距 20px */
+    cursor: pointer;                         /* 滑過時游標變成👆🏻 */
+    width: 290px;                            /* 寬度 290px */
 }
 
+/* 登入按鈕 hover 效果 */
+.login-btn:hover {
+    background: #7f7f7f;                     /* 背景色 #7f7f7f */
+    color: #fff;                             /* 白色字 */
+}
+
+/* ==== 社群登入樣式 ==== */
 .social-login {
-    margin-top: 40px;
+    margin-top: 40px;                        /* 上外距 40px */
 }
 
+/* 社群登入標題 */
 .social-title {
-    display: block;
-    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif;
-    font-size: 18px;
-    height: 27px;
-    line-height: 27px;
-    list-style-type: none;
-    margin-left: 10px;
-    text-align: left;
-    font-weight: bold;
+    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, Meiryo, sans-serif; /* 多語字型 */
+    font-size: 18px;                         /* 字體大小 18px */
+    height: 27px;                            /* 高度 27px */
+    line-height: 27px;                       /* 行高 27px */
+    margin-left: 10px;                       /* 左外距 10px */
+    text-align: left;                        /* 文字左對齊 */
+    font-weight: bold;                       /* 粗體 */
 }
 
+/* 社群按鈕排列 */
 .social-buttons {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: flex;                           /* 彈性盒模型 */
+    gap: 30px;                               /* 間距 30px */
+    flex-wrap: wrap;                         /* 自動換行 */
 }
 
+/* 各社群登入按鈕 */
 .social-btn {
-    cursor: pointer;
-    flex: 1;
-    min-width: 200px;
-    padding: 10px 16px;
-    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    background-color: white;
-    cursor: pointer;
-    text-align: center;
-    white-space: nowrap;
-    transition: all 0.2s ease;
+    flex: 1;                                 /* 彈性佔 1 */
+    min-width: 200px;                        /* 最小寬 200px */
+    padding: 10px 16px;                      /* 上下 10px 左右 16px */
+    font-family: din-2014, noto-sans-cjk-jp, source-han-sans-traditional, noto-sans-cjk-kr, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, メイリオ, Meiryo, sans-serif; /* 多語字型 */
+    font-size: 18px;                         /* 字體大小 18px */
+    cursor: pointer;                         /* 滑過時游標變成👆🏻 */
+    text-align: center;                      /* 文字居中 */
+    white-space: nowrap;                     /* 不換行 */
+    background: #fff;                        /* 背景白色 */
+    color: #111;                             /* 字體顏色深灰 */
+    border: 1px solid #bebebe;               /* 灰色邊框 */
+    transition: border-color 0.2s;           /* 邊框顏色過渡 0.2s */
 }
 
+/* 社群按鈕圖示 */
 .social-btn img {
-    vertical-align: middle;
-    margin-right: 8px;
-    height: 20px;
+    vertical-align: middle;                  /* 垂直置中 */
+    margin-right: 8px;                       /* 右外距 8px */
+    height: 20px;                            /* 高度 20px */
 }
 
+/* 社群按鈕 hover 效果 */
 .social-btn:hover {
-    background-color: #f0f0f0;
+    border-color: #000;                      /* 滑過時邊框改黑色 */
 }
 
-.buttons button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    background: #f7f7f7;
-    cursor: pointer;
-}
-
-/* ==== Footer 吸底 ==== */
+/* ==== Footer 樣式 ==== */
 footer {
-    flex-shrink: 0;
-    width: 100%;
-    background-color: #f7f8fa;
-    margin: 0;
-    padding: 0;
-    position: static;
+    flex-shrink: 0;                          /* 不收縮 */
+    width: 100%;                             /* 寬度 100% */
+    background-color: #f7f8fa;               /* 背景色 #f7f8fa */
+    margin: 0;                               /* 外距 0 */
+    padding: 0;                              /* 內距 0 */
+    position: static;                        /* 靜態定位 */
 }
 
+/* Footer 內容排列 */
 .casio-id__footer {
-    max-width: 100vw;
-    box-sizing: border-box;
-    padding: 10px 56px 7px 56px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    max-width: 100vw;                        /* 最大寬度 100vw */
+    box-sizing: border-box;                  /* 盒模型包含邊框與內距 */
+    padding: 10px 56px 7px 56px;             /* 內距：上 10 右 56 下 7 左 56 */
+    display: flex;                           /* 彈性盒模型 */
+    flex-direction: column;                  /* 垂直排列 */
+    gap: 0;                                  /* 無間距 */
 }
 
+/* Footer 連結列表 */
 .casio-id__footer-links--utility ul {
-    display: flex;
-    gap: 36px;
-    padding: 0;
-    margin: 0 0 5px 0;
-    list-style: none;
+    display: flex;                           /* 彈性盒模型 */
+    gap: 36px;                               /* 間距 36px */
+    padding: 0;                              /* 內距 0 */
+    margin: 0 0 5px 0;                       /* 外距：上 0 右 0 下 5 左 0 */
+    list-style: none;                        /* 無項目符號 */
 }
 
+/* Footer 連結列表項目 */
 .casio-id__footer-links--utility li {
-    margin: 0;
-    font-size: 11px;
+    margin: 0;                               /* 無外距 */
+    font-size: 11px;                         /* 字體大小 11px */
 }
 
+/* Footer 連結樣式 */
 .casio-id__footer-links--utility a {
-    color: #000;
-    font-family: "din-2014", 'noto-sans-cjk-jp', 'source-han-sans-traditional', 'noto-sans-cjk-kr', "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
-    font-size: 9px;
-    text-decoration: none;  /* 取消底線 */
-    transition: color 0.2s;
+    color: #000;                             /* 黑色字 */
+    font-family: "din-2014", 'noto-sans-cjk-jp', 'source-han-sans-traditional', 'noto-sans-cjk-kr', "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif; /* 多語字型 */
+    font-size: 9px;                          /* 字體大小 9px */
+    text-decoration: none;                   /* 無底線 */
+    transition: color 0.2s;                  /* 顏色過渡 0.2s */
 }
 
+/* Footer 連結 hover */
 .casio-id__footer-links--utility a:hover {
-    color: #000;
-    text-decoration: underline;
+    color: #000;                             /* 黑色字 */
+    cursor: pointer;                         /* 滑過時游標變成👆🏻 */
 }
 
+/* Footer 版權宣告 */
 .casio-id__footer-copyright {
-    color: #666;
-    font-family: "din-2014", 'noto-sans-cjk-jp', 'source-han-sans-traditional', 'noto-sans-cjk-kr', "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
-    font-size: 9px;
-    margin-top: 2px;
+    color: #666;                             /* 灰色字 */
+    font-family: "din-2014", 'noto-sans-cjk-jp', 'source-han-sans-traditional', 'noto-sans-cjk-kr', "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif; /* 多語字型 */
+    font-size: 9px;                          /* 字體大小 9px */
+    margin-top: 2px;                         /* 上外距 2px */
 }
 
+/* Footer 版權連結 */
 .casio-id__footer-copyright a {
-    color: #666;
-    font-family: "din-2014", 'noto-sans-cjk-jp', 'source-han-sans-traditional', 'noto-sans-cjk-kr', "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
-    font-size: 9px;
-    text-decoration: none;
+    color: #666;                             /* 灰色字 */
+    font-size: 9px;                          /* 字體大小 9px */
+    text-decoration: none;                   /* 無底線 */
+}
+
+/* Footer 版權 hover */
+.casio-id__footer-copyright a:hover {
+    cursor: pointer;                         /* 滑過時游標變成👆🏻 */
 }
