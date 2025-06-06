@@ -27,14 +27,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== 登入表單送出時直接跳轉區塊 =====
-    // 取得表單元素
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
-        // 當表單送出（按下登入）時
         loginForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // 阻止瀏覽器預設的送出行為（不會真的送出到伺服器）
-            // 直接導向指定的 404 error page (第一次作業的404網頁)
-            window.location.href = "https://hadleyliao.github.io/FCU_Web_HW1_Casio404ErrorPage/";
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            fetch('http://localhost:3000/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = "https://hadleyliao.github.io/FCU_Web_HW1_Casio404ErrorPage/";
+                } else {
+                    alert('登入失敗');
+                }
+            })
+            .catch(() => alert('伺服器錯誤'));
         });
     }
 });
